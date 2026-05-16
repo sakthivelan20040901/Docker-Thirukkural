@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+
+  chatbot-basic:
+    build:
+      context: ./ChatBot_without_Multistage_and_Distroless
+      dockerfile: Dockerfile
+    container_name: chatbot-basic
+    ports:
+      - "5001:5000"
+    restart: unless-stopped
+
+  chatbot-multistage:
+    build:
+      context: ./Chatbot_with_MultiStage_Build
+      dockerfile: Dockerfile
+    container_name: chatbot-multistage
+    ports:
+      - "5002:5000"
+    restart: unless-stopped
+
+  chatbot-distroless:
+    build:
+      context: ./Chatbot_with_Distroless
+      dockerfile: Dockerfile
+    container_name: chatbot-distroless
+    ports:
+      - "5003:5000"
+    restart: unless-stopped
+
+  chatbot-final:
+    build:
+      context: ./Chatbot_with_MultiStage_and_Distroless
+      dockerfile: Dockerfile
+    container_name: chatbot-final
+    ports:
+      - "5004:5000"
+    restart: unless-stopped
