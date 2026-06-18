@@ -124,7 +124,7 @@ Docker Container
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/docker-build-optimization.git
+git clone https://github.com/sakthivelan20040901/Docker-Thirukkural.git
 
 cd docker-build-optimization
 ```
